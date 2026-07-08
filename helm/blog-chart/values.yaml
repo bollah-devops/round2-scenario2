@@ -1,0 +1,23 @@
+replicaCount: 2
+
+image:
+  repository: tawa123/blog-k8s
+  tag: "latest"
+
+namespace: staging
+
+env:
+  ENV_NAME: staging
+  VERSION: "1.0.0"
+
+secret:
+  SECRET_KEY: default-secret-key
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 5000
+  nodePort: 30081
+
+ingress:
+  path: /staging

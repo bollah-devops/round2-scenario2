@@ -1,0 +1,19 @@
+replicaCount: 3
+
+namespace: production
+
+env:
+  ENV_NAME: production
+  VERSION: "1.0.0"
+
+secret:
+  SECRET_KEY: production-secret-key-456
+
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 5000
+  nodePort: 30082
+
+ingress:
+  path: /production

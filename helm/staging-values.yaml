@@ -1,0 +1,19 @@
+replicaCount: 2
+
+namespace: staging
+
+env:
+  ENV_NAME: staging
+  VERSION: "1.0.0"
+
+secret:
+  SECRET_KEY: staging-secret-key-123
+
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 5000
+  nodePort: 30081
+
+ingress:
+  path: /staging
