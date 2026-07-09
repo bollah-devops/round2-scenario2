@@ -17,3 +17,8 @@ service:
 
 ingress:
   path: /production
+
+hpa:
+  minReplicas: 3
+  maxReplicas: 10
+  targetCPU: 70

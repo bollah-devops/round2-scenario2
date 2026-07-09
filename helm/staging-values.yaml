@@ -17,3 +17,8 @@ service:
 
 ingress:
   path: /staging
+
+hpa:
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPU: 70
